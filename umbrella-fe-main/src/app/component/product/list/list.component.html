@@ -1,0 +1,107 @@
+<div class="top-brands">
+  <div class="container" style="background: whitesmoke;width: 90%">
+    <h2  style=" margin-top: -50px;">Danh Sách Sản Phẩm</h2>
+    <div class="grid_3 grid_5" style="border-radius: 5px">
+      <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+        <div id="myTabContent" class="tab-content"
+             style="margin-top: -50px;border:1px solid #fe9126;background-color: white;border-radius: 5px">
+
+          <div class="products-right-grid" style="margin-top: 20px; margin-left: 830px">
+            <div class="products-right-grids">
+              <div class="sorting">
+                <select #sort (change)="sortByAll(sort.value)"
+                        style="width: 78% ;height: 34px;border-radius: 5px;border: 1px solid black">
+                  <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Số Lượng</option>
+                  <option value="0"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Tên</option>
+                  <option value="2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Giá</option>
+
+                </select>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab"
+               style="border-radius: 13px">
+            <div class="agile_top_brands_grids" style="margin-top: 10px;border-radius: 5px">
+              <div class="col-md-3 top_brand_left" style="border-radius: 5px;width: 260px;height: auto;"
+                   *ngFor="let product of products|paginate: { itemsPerPage: 12, currentPage: p, totalItems: total }, index as i">
+<!--                <div class="hover14 column" style="border: 1px solid grey;border-radius: 5px">-->
+<!--                  <div class="agile_top_brand_left_grid" style="border-radius: 5px;padding: 0">-->
+<!--                    <figure>-->
+<!--                      <div class="snipcart-item block" style="width: 250px;height:380px">-->
+<!--                        <div class="snipcart-thumb">-->
+<!--                          <img-->
+<!--                            src="{{product.image[0].image}}"-->
+<!--                            class="img-responsive-home"/>-->
+<!--                          <p><a href="#" [routerLink]="['/product-detail',product.id]"-->
+<!--                                class="show-product-home">{{product.name}}</a></p>-->
+<!--                          <h3 style="width: 230px;font-size: 16px; margin-top: 15px; text-align: center;color: #fe9126"> {{ product.price | currency:' VNĐ ':'symbol':'3.0'}}-->
+<!--                          </h3>-->
+<!--                          <p><a href="#" [routerLink]="['/product-detail',product.id]"-->
+<!--                                class="show-product-home">{{product.address}}</a></p>-->
+<!--                        </div>-->
+<!--                        <div class="snipcart-details top_brand_home_details">-->
+<!--                          <br>-->
+<!--&lt;!&ndash;                          <button class="btn button-edit button-shop-list" data-toggle="modal" data-target="#exampleModalAdd"&ndash;&gt;-->
+<!--&lt;!&ndash;                                  style="margin-right: 20px;font-size: 16px;height: 48px; width: 200px" (click)="findByIdProduct(product.id)"><i&ndash;&gt;-->
+<!--&lt;!&ndash;                            class="fa-solid fa-basket-shopping"&ndash;&gt;-->
+<!--&lt;!&ndash;                            style="margin-right: 5px;"></i>Thêm&ndash;&gt;-->
+<!--&lt;!&ndash;                            Vào Giỏ Hàng&ndash;&gt;-->
+<!--&lt;!&ndash;                          </button>&ndash;&gt;-->
+<!--                          <br>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                    </figure>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <br>-->
+
+                <div>
+
+                </div>
+
+
+              </div>
+              <div class="clearfix">
+              </div>
+            </div>
+          </div>
+          <nav class="numbering">
+            <ul class="pagination paging">
+              <pagination-controls
+                previousLabel="Trước"
+                nextLabel="Sau"
+                (pageChange)="pageChangeEvent($event)"></pagination-controls>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width: 700px;margin-left: 600px">
+  <div class="modal-dialog" style="width: 700px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;width: 100%">Số Lượng Sản Phẩm</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">X</span>
+        </button>
+      </div>
+      <div>
+        <form [formGroup]="addCartForm" (submit)="addToShoppingCart(product, shop)">
+          <br>
+          <br>
+          <input type='text' formControlName="quantity" class="form-control" placeholder="Nhập Số lượng sản phẩm"
+                 style="width: 250px; height: 55px;margin-left: 33%"><br>
+          <div class="modal-footer">
+            <button type="submit" style="margin-right: 240px" class="btn button-edit">Thêm Vào Giỏ Hàng</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

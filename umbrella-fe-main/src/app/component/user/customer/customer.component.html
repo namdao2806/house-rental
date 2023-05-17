@@ -1,0 +1,58 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<div class="checkout">
+  <div class="container" style="width: 80%">
+    <div class="top-brands1">
+      <h2 style=" margin-top: 20px;font-size: 40px">Danh Sách Khách Hàng</h2>
+    </div>
+    <div>
+      <form [formGroup]="phoneSearch" (submit)="searchPhone()">
+        <input type="text" formControlName="phone" placeholder="Nhập số điện thoại khách hàng cần tìm" style="border-radius: 5px;border: 1px solid black;width: 230px;height: 34px">
+        <button type="submit" style="margin-left:5px; background-color: #fe9126;margin-bottom: 3px" class="btn search"> <i class="fa fa-search" aria-hidden="true" style="color: white"></i></button>
+        <select #sort (change)="sortByAll(sort.value)"
+                style="width: 18% ;height: 34px;border-radius: 5px;border: 1px solid black;margin-left: 920px">
+          <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Số Điện Thoại</option>
+          <option value="0"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Tên</option>
+        </select>
+      </form>
+      <br>
+     </div>
+
+
+    <div style="">
+      <table class="timetable_sub" style="border:2px solid #CDCDCD;border-radius: 10px">
+        <thead>
+        <tr>
+          <th style="font-size: 20px">STT</th>
+          <th style="font-size: large">Tên khách hàng</th>
+          <th style="font-size: large">Số điện thoại</th>
+          <th style="font-size: large">Địa chỉ</th>
+          <th style="font-size: large">Email</th>
+        </tr>
+        </thead>
+        <tr class="rem1" *ngFor="let item of users|paginate: { itemsPerPage: 12, currentPage: p, totalItems: total },index as i">
+          <td class="invert">{{i + 1}}</td>
+          <td><a [routerLink]="['/customer-shop', item.id]">
+            <div style="font-size: medium;">{{item.name}}</div>
+          </a>
+          </td>
+          <td class="invert">
+                <div style="font-size: medium;">{{item.phone}}</div>
+          </td>
+          <td>{{item.address}}</td>
+          <td>{{item.email}}</td>
+        </tr>
+      </table>
+      <nav class="numbering">
+        <ul class="pagination paging">
+          <pagination-controls
+            previousLabel="Trước"
+            nextLabel="Sau"
+            (pageChange)="pageChangeEvent($event)"></pagination-controls>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
