@@ -49,6 +49,9 @@ export class AuthenticationService {
   findAllCustomersExpectUser(id: any): Observable<User> {
     return this.httpClient.get<User>(API_URL + '/users/find-all-customers-expect-user/' + id);
   }
+  findAllUserByAdmin(): Observable<User>{
+    return this.httpClient.get<User>(API_URL + '/admin/users');
+  }
 
   findUserById(id: any): Observable<User> {
     return this.httpClient.get<User>(API_URL + '/users/' + id);

@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {AdminComponent} from "./component/pages/admin/admin.component";
+import {AdminComponent} from "./component/admin/admin/admin.component";
 import {HomeComponent} from "./component/pages/home/home.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
 import {LoginComponent} from "./component/pages/login/login.component";
@@ -43,7 +43,10 @@ import {ListCartComponent} from "./component/customer-shopping-cart/listcart/lis
 import { ListBillComponent } from './component/user/list-bill/list-bill.component';
 import {DetailBillComponent} from "./component/user/detail-bill/detail-bill.component";
 import { DetailShoppingCartComponent } from './component/customer-shopping-cart/detail-shopping-cart/detail-shopping-cart.component';
-import { AdminNavbarComponent } from './component/blocks/admin-navbar/admin-navbar.component';
+import { AdminNavbarComponent } from './component/admin/admin-navbar/admin-navbar.component';
+import { AdminHeaderComponent } from './component/admin/admin-header/admin-header.component';
+import { AdminAllProductComponent } from './component/admin/admin-all-product/admin-all-product.component';
+import { ListUserComponent } from './component/admin/list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +79,10 @@ import { AdminNavbarComponent } from './component/blocks/admin-navbar/admin-navb
     ListBillComponent,
     DetailBillComponent,
     DetailShoppingCartComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    AdminHeaderComponent,
+    AdminAllProductComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,

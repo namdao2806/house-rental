@@ -19,7 +19,9 @@ import {DetailBillComponent} from "./component/user/detail-bill/detail-bill.comp
 import {
   DetailShoppingCartComponent
 } from "./component/customer-shopping-cart/detail-shopping-cart/detail-shopping-cart.component";
-import {AdminComponent} from "./component/pages/admin/admin.component";
+import {AdminComponent} from "./component/admin/admin/admin.component";
+import {AdminAllProductComponent} from "./component/admin/admin-all-product/admin-all-product.component";
+import {ListUserComponent} from "./component/admin/list-user/list-user.component";
 
 const routes: Routes = [
   {
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path:"admin",
     component: AdminComponent,
+  },
+  {
+    path:"admin/admin-all-products",
+    component: AdminAllProductComponent,
+  },
+  {
+    path:"admin/list-users",
+    component: ListUserComponent,
   },
   {
     path:'product-detail/:id',

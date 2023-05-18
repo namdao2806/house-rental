@@ -18,9 +18,9 @@
           <br>
           <carousel >
             <div class="carousel-cell" *ngFor="let img of obj.image">
-              <img src="{{img.image}}" style="width: 110%" #hoa class="img-hover">
+              <img src="" style="width: 110%" #hoa class="img-hover">
 
-              <img src="{{img.image}}" style="width: 110%" >
+              <img src="" style="width: 110%" >
             </div>
           </carousel>
         </div>
@@ -55,21 +55,25 @@
       <div class="row">
         <div class="snipcart-thumb agileinfo_single_right_snipcart">
           <p style="font-size: 30px; margin-bottom: 10px"><b>{{obj.name}}</b></p>
-          <h2 class="m-sing" style="color: #fe9126">Giá: {{ obj.price | currency:' VNĐ ':'symbol':'3.0'}} </h2>
+          <h2 class="m-sing" style="color: red; font-size: 20px">Giá: {{ obj.price.toLocaleString('vi-VN') }}đ/tháng </h2>
         </div>
 
-        <div class="w3agile_description" style="">
-          <h4 style="margin-bottom: 15px"><i class="fa-solid fa-store" style="margin-right: 5px"></i>
-            CỬA HÀNG: <i>{{obj.user.name}}</i></h4>
-          <h4 style="margin-bottom: 6px;"><i class="fa-solid fa-newspaper" style="margin-right: 5px"></i>Mô tả sản
+        <div class="" style="">
+          <h4 style="margin-bottom: 12px;"><i class="fa-solid fa-store" style="margin-right: 1px"></i>
+            Người đăng:
+            <span style="font-weight: 400; font-size: 18px">{{obj.user.name}}</span></h4>
+          <h4 style="margin-bottom: 12px;"><span style="margin-right: 8px;"><i class="fa-solid fa-phone"></i></span>Số điện thoại:
+            <span  style="font-weight: 400; font-size: 18px">
+              {{obj.user.phone}}
+            </span></h4>
+          <h4 style="margin-bottom: 6px;"><i class="fa-solid fa-newspaper" style="margin-right: 8px"></i>Mô tả sản
             phẩm
             :
-          </h4 ><pre style="width: 900px;overflow: auto;height: 300px">
-          <i >{{obj.description}}</i></pre>
-          <h4 style="margin-bottom: 6px;"><i class="fa-solid fa-newspaper" style="margin-right: 5px"></i>Địa chỉ
-            :
-          </h4 ><pre style="width: 900px;overflow: auto;height: 300px">
-          <i >{{obj.address}}</i></pre>
+          </h4 ><p style="overflow: auto; margin-top: 12px">{{obj.description}}</p>
+          <h4 style="margin-top: 20px;"><i style="margin-right: 8px;" class="fa-solid fa-location-dot"></i>Địa chỉ:
+            <span style="font-weight: 400; font-size: 18px">{{obj.address}}</span>
+          </h4 >
+
         </div>
       </div>
 
