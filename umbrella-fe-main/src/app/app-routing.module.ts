@@ -22,6 +22,8 @@ import {
 import {AdminComponent} from "./component/admin/admin/admin.component";
 import {AdminAllProductComponent} from "./component/admin/admin-all-product/admin-all-product.component";
 import {ListUserComponent} from "./component/admin/list-user/list-user.component";
+import {AdminEditUserComponent} from "./component/admin/admin-edit-user/admin-edit-user.component";
+import {AdminEditProductComponent} from "./component/admin/admin-edit-product/admin-edit-product.component";
 
 const routes: Routes = [
   {
@@ -43,6 +45,14 @@ const routes: Routes = [
   {
     path:'product-detail/:id',
     component:DetailProductComponent
+  },
+  {
+    path:'admin/admin-edit-user/:id',
+    component:AdminEditUserComponent
+  },
+  {
+    path:'admin/admin-edit-product/:id',
+    component:AdminEditProductComponent
   },
   {
     path:'shop-cart',

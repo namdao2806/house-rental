@@ -47,6 +47,8 @@ import { AdminNavbarComponent } from './component/admin/admin-navbar/admin-navba
 import { AdminHeaderComponent } from './component/admin/admin-header/admin-header.component';
 import { AdminAllProductComponent } from './component/admin/admin-all-product/admin-all-product.component';
 import { ListUserComponent } from './component/admin/list-user/list-user.component';
+import { AdminEditUserComponent } from './component/admin/admin-edit-user/admin-edit-user.component';
+import { AdminEditProductComponent } from './component/admin/admin-edit-product/admin-edit-product.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { ListUserComponent } from './component/admin/list-user/list-user.compone
     AdminNavbarComponent,
     AdminHeaderComponent,
     AdminAllProductComponent,
-    ListUserComponent
+    ListUserComponent,
+    AdminEditUserComponent,
+    AdminEditProductComponent
   ],
   imports: [
     BrowserModule,

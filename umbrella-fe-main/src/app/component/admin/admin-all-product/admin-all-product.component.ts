@@ -42,7 +42,16 @@ export class AdminAllProductComponent implements OnInit {
   pageChangeEvent(event: number) {
     this.p = event;
   }
-
+  deleteProduct(id: any) {
+    if (confirm('Bạn chắc chắn muốn xóa sản phẩm này chứ ???')) {
+      this.productService.delete(id).subscribe(() => {
+        // this.findProductByUserId(id)
+        this.toast.success({detail: "Thành Công", summary: 'Xóa thành công!', duration: 3000})
+      }, e => {
+        console.log(e);
+      });
+    }
+  }
   getAllProducts() {
     this.listImage = []
     if (this.userId == localStorage.getItem("ID")) {

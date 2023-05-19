@@ -98,8 +98,17 @@
                   </div>
                 </div>
                 <div style="display: flex; gap:12px; font-size: 18px; cursor: pointer">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                  <i class="fa-solid fa-trash"></i>
+                  <button type="button" class="btn button-edit" style="width: 90px;font-size: small"
+                          data-toggle="modal" data-target="#exampleModalEditProductMyShop"
+                          [routerLink]="['/admin/admin-edit-product',product.id]"><i class="fa-solid fa-pen-to-square"
+                                                                                 style="margin-right: 5px"></i>
+                  </button>
+                  <button class="btn button-delete" (click)="deleteProduct(product.id)"
+                          style="font-size: small;width: 90px"><i class="fa-solid fa-trash-can" style="margin-right: 5px"></i>Xóa
+                  </button>
+<!--                  <a data-toggle="modal" data-target="#exampleModalEditProductMýhop"-->
+<!--                    [routerLink]="['/admin/admin-edit-product',product.id]"><i class="fa-solid fa-pen-to-square"></i></a>-->
+<!--                  <i class="fa-solid fa-trash"></i>-->
                 </div>
               </div>
             </div>
