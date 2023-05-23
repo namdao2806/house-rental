@@ -4,6 +4,7 @@ import {BehaviorSubject, map, Observable} from "rxjs";
 import {UserToken} from "../model/user-token";
 import {HttpClient} from "@angular/common/http";
 import {User} from "../model/user";
+import {Category} from "../model/category";
 
 const API_URL = environment.apiUrl;
 
@@ -59,5 +60,11 @@ export class AuthenticationService {
 
   findCustomerByPhone(phone: any, id: any): Observable<User> {
     return this.httpClient.get<User>(API_URL + '/users/find-customer-by-phone?phone=' + phone + '&id=' + id);
+  }
+  findCustomerByName(name: any): Observable<User> {
+    return this.httpClient.get<User>(API_URL + '/admin/users/find-by-name?name=' + name );
+  }
+  updateUser(id: number, user: User): Observable<User> {
+    return this.httpClient.put<User>(API_URL + '/users/' + id, user);
   }
 }

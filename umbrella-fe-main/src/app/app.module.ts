@@ -49,6 +49,10 @@ import { AdminAllProductComponent } from './component/admin/admin-all-product/ad
 import { ListUserComponent } from './component/admin/list-user/list-user.component';
 import { AdminEditUserComponent } from './component/admin/admin-edit-user/admin-edit-user.component';
 import { AdminEditProductComponent } from './component/admin/admin-edit-product/admin-edit-product.component';
+import { UserDetailsComponent } from './component/user/user-details/user-details.component';
+import { AdminAllCategoryComponent } from './component/admin/admin-all-category/admin-all-category.component';
+import { AdminEditCategoryComponent } from './component/admin/admin-edit-category/admin-edit-category.component';
+import { AdminCreateCategoryComponent } from './component/admin/admin-create-category/admin-create-category.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +90,11 @@ import { AdminEditProductComponent } from './component/admin/admin-edit-product/
     AdminAllProductComponent,
     ListUserComponent,
     AdminEditUserComponent,
-    AdminEditProductComponent
+    AdminEditProductComponent,
+    UserDetailsComponent,
+    AdminAllCategoryComponent,
+    AdminEditCategoryComponent,
+    AdminCreateCategoryComponent
   ],
   imports: [
     BrowserModule,

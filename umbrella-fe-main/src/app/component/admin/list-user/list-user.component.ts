@@ -12,8 +12,8 @@ export class ListUserComponent implements OnInit {
 
   users: User[] | any
   userId = localStorage.getItem("ID")
-  phoneSearch: FormGroup = new FormGroup({
-    phone: new FormControl('')
+  nameSearch: FormGroup = new FormGroup({
+    name: new FormControl('')
   })
   p: number = 1;
   total: number = 0;
@@ -33,8 +33,8 @@ export class ListUserComponent implements OnInit {
   }
 
 
-  searchPhone() {
-    this.authentication.findCustomerByPhone(this.phoneSearch.value.phone, this.userId).subscribe((data) => {
+  searchName() {
+    this.authentication.findCustomerByName(this.nameSearch.value.name).subscribe((data) => {
       this.users = data
       console.log(this.users)
     })

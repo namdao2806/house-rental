@@ -23,14 +23,6 @@
       </div>
       <div class="col-md-4 w3_footer_grid">
         <h3>Trang Cá Nhân</h3>
-        <ul class="info" *ngIf="isLogin">
-          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a [routerLink]="['/my-shop',id]">Cửa hàng của tôi</a></li>
-          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">Giỏ hàng của tôi</a></li>
-        </ul>
-        <ul class="info" *ngIf="!isLogin">
-          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="/login">Đăng nhập</a></li>
-          <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a routerLink="/register">Đăng ký</a></li>
-        </ul>
 
       </div>
       <div class="clearfix"></div>

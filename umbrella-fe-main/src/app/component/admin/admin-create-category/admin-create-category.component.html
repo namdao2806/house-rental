@@ -1,0 +1,34 @@
+<app-admin-all-category></app-admin-all-category>
+<div class="modal fade" id="exampleModalCreateProduct" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center">Thêm Mới </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 20px">
+          <span aria-hidden="true">X</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="categoryForm" (ngSubmit)="add()">
+          <div class="row">
+            <div style="margin-bottom: 20px">
+              <label style="margin-left: 20%">Tên danh mục:</label>
+              <input class="form-control" type="text" placeholder="Tên danh mục" formControlName="name"
+                     style="width: 500px; height: 35px;margin-left: 20%">
+<!--              <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">-->
+<!--                <div style="color: red" *ngIf="name?.errors?.['required']">-->
+                  <div style="margin-left: 170px">Tên không được bỏ trống</div>
+                </div>
+              </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn button-edit" style="margin-right: 375px"><i class="fa-solid fa-plus"
+                                                                                         style="margin-right: 5px"></i>Thêm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

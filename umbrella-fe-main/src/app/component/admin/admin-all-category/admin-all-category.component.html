@@ -1,0 +1,42 @@
+<app-admin-header></app-admin-header>
+<app-admin-navbar></app-admin-navbar>
+
+<div class="checkout">
+  <div class="container" style="width: 80%">
+    <div class="top-brands1">
+      <h2 style=" margin-top: 20px;font-size: 40px">Danh Sách Danh Mục</h2>
+    </div>
+    <div style="margin-bottom: 50px">
+      <button class="button-add" role="button" data-toggle="modal" data-target="#exampleModalCreateProduct"
+              [routerLink]="['/admin/admin-create-category/']"><i class="fa-solid fa-plus" style="margin-right: 5px"></i> Thêm danh mục
+      </button>
+    </div>
+    <div style="">
+      <table class="timetable_sub" style="border:2px solid #CDCDCD;border-radius: 10px">
+        <thead>
+        <tr>
+          <th style="font-size: 20px">STT</th>
+          <th style="font-size: large">Tên danh mục</th>
+          <th>Chức năng</th>
+        </tr>
+        </thead>
+        <tr class="rem1" *ngFor="let item of categories,index as i">
+          <td class="invert">{{i + 1}}</td>
+          <td>
+            <div style="font-size: medium;">{{item.name}}</div>
+          </td>
+          <td>
+            <div class="rem">
+                            <button type="button" class="btn button-edit" style="width: 90px;font-size: small"
+                                    data-toggle="modal" data-target="#exampleModalEditProductMyShop"
+                                    [routerLink]="['/admin/admin-edit-category',item.id]"><i class="fa-solid fa-pen-to-square"
+                                                                                           style="margin-right: 5px"></i> Sửa
+                            </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

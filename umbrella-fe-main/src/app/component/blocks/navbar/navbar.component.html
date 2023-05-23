@@ -15,7 +15,7 @@
           <li class="active columns-3">
             <a (click)="goHome()" routerLink="/" class="act" style="font-size: large"><i class="fa-solid fa-house" style="margin-right: 5px"></i>Trang Chủ</a></li>
           <li class="active">
-            <a style="font-size: large" [routerLink]="['/all-products']"  class="act" >Tất Cả Sản Phẩm</a></li>
+            <a style="font-size: large" [routerLink]="['/all-products']"  class="act" >Tất Cả Bài Đăng</a></li>
 
           <li class="active" *ngFor="let category of categories">
             <a style="font-size: large"  [routerLink]="['/products-by-categories',category.id]"  class="act" (click)="searchCategory(category.id)" >{{category.name}}</a></li>

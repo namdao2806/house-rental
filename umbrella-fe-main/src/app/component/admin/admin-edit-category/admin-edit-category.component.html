@@ -1,0 +1,24 @@
+<app-admin-all-category></app-admin-all-category>
+<div class="modal fade" id="exampleModalEditProductMyShop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center">Sửa </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 20px">
+          <span aria-hidden="true">X</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editCategoryForm" (submit)="save()">
+          <input type="hidden" formControlName="id">
+          <label style="margin-left: 20%">Tên :</label>
+          <input type='text' formControlName="name"  class="form-control"  style="width: 500px; height: 35px;margin-left: 20%"><br>
+          <div class="modal-footer" >
+            <button type="submit" style="margin-right: 375px"  class="btn button-edit"><i class="fa-solid fa-pen-to-square"
+                                                                                          style="margin-right: 5px"></i>Sửa</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

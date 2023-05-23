@@ -23,16 +23,16 @@
             <div class="multi-gd-img">
               <ul class="multi-column-dropdown">
                 <a [routerLink]="['/my-shop', id]" style="color: black;font-size: 15px"><i
-                  class="fa-solid fa-shop" style="margin-right: 10px;"></i>Cửa hàng của tôi</a>
+                  class="fa-solid fa-shop" style="margin-right: 10px;"></i>Bài đăng của tôi</a>
                 <hr>
-                <a [routerLink]="['/all-customers']" style="color: black;font-size: 15px"> <i class="fa-solid fa-address-book" style="margin-right: 10px"></i>Danh sách khách hàng</a>
+                <a [routerLink]="['/user-details',id]" style="color: black;font-size: 15px"> <i class="fa-solid fa-address-book" style="margin-right: 10px"></i>Thông tin cá nhân</a>
                 <hr>
-                <a [routerLink]="['/my-bills']" style="color: black;font-size: 15px"><i
-                  class="fa-solid fa-file-invoice" style="margin-right: 10px"></i>Danh sách hóa đơn</a>
-                <hr>
-                <a [routerLink]="['/shop-bills']" style="color: black;font-size: 15px"><i
-                  class="fa-solid fa-list-check" style="margin-right: 10px"></i>Danh sách đơn đặt hàng</a>
-                <hr>
+<!--                <a [routerLink]="['/my-bills']" style="color: black;font-size: 15px"><i-->
+<!--                  class="fa-solid fa-file-invoice" style="margin-right: 10px"></i>Danh sách hóa đơn</a>-->
+<!--                <hr>-->
+<!--                <a [routerLink]="['/shop-bills']" style="color: black;font-size: 15px"><i-->
+<!--                  class="fa-solid fa-list-check" style="margin-right: 10px"></i>Danh sách đơn đặt hàng</a>-->
+<!--                <hr>-->
                 <a href="" (click)="logOut()" style="color: black;font-size: 15px"><i
                   class="fa-solid fa-arrow-right-from-bracket"
                   style="margin-right: 10px"></i>Đăng xuất</a>
@@ -45,10 +45,10 @@
     </ul>
 
     <div class="product_list_header" style="margin-top: 12px" *ngIf="isLogin">
-      <input type="hidden" name="cmd" value="_cart">
-      <input type="hidden" name="display" value="1">
-      <a [routerLink]="['/shop-cart']" class="w3view-cart"><i class="fa fa-cart-arrow-down"
-                                                               aria-hidden="true" style="color: #fe9126"></i></a>
+<!--      <input type="hidden" name="cmd" value="_cart">-->
+<!--      <input type="hidden" name="display" value="1">-->
+<!--      <a [routerLink]="['/shop-cart']" class="w3view-cart"><i class="fa fa-cart-arrow-down"-->
+<!--                                                               aria-hidden="true" style="color: #fe9126"></i></a>-->
     </div>
     <div class="product_list_header" style="margin-top: 12px" *ngIf="!isLogin">
 

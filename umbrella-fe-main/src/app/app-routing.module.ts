@@ -24,6 +24,10 @@ import {AdminAllProductComponent} from "./component/admin/admin-all-product/admi
 import {ListUserComponent} from "./component/admin/list-user/list-user.component";
 import {AdminEditUserComponent} from "./component/admin/admin-edit-user/admin-edit-user.component";
 import {AdminEditProductComponent} from "./component/admin/admin-edit-product/admin-edit-product.component";
+import {UserDetailsComponent} from "./component/user/user-details/user-details.component";
+import {AdminAllCategoryComponent} from "./component/admin/admin-all-category/admin-all-category.component";
+import {AdminEditCategoryComponent} from "./component/admin/admin-edit-category/admin-edit-category.component";
+import {AdminCreateCategoryComponent} from "./component/admin/admin-create-category/admin-create-category.component";
 
 const routes: Routes = [
   {
@@ -43,6 +47,14 @@ const routes: Routes = [
     component: ListUserComponent,
   },
   {
+    path:"admin/admin-all-category",
+    component: AdminAllCategoryComponent,
+  },
+  {
+    path:"admin/admin-edit-category/:id",
+    component: AdminEditCategoryComponent,
+  },
+  {
     path:'product-detail/:id',
     component:DetailProductComponent
   },
@@ -55,12 +67,20 @@ const routes: Routes = [
     component:AdminEditProductComponent
   },
   {
+    path:'admin/admin-create-category',
+    component:AdminCreateCategoryComponent
+  },
+  {
     path:'shop-cart',
     component:ShopCartComponent
   },
   {
     path:'my-shop/:id',
     component:ListProductComponent
+  },
+  {
+    path:'user-details/:id',
+    component:UserDetailsComponent
   },
   {
     path:'products-by-categories/:id',
