@@ -39,6 +39,9 @@ export class ProductService {
   searchByAll( name:any,address:any,description:any,from:any,to:any):Observable<Product[]> {
     return this.httpClient.get<Product[]>(API_URL + '/products/find-products-by-filter?name='+name+'&address='+address+'&description='+description+'&from='+from+'&to='+to );
   }
+  findByQuantity(quantity:any):Observable<Product[]> {
+    return this.httpClient.get<Product[]>(API_URL + '/products/find-products-by-quantity?quantity='+quantity );
+  }
   findProductByName(name: any): Observable<Product[]> {
     return this.httpClient.get<Product[]>(API_URL + '/products/find-products-by-name?name=' + name)
   }
