@@ -47,7 +47,7 @@ h3.agileits-sear-head {
   outline: none;
   padding: 11px 10px 10px 10px;
   font-size: 13px;
-  color: #c4c4c4;
+  /*color: #c4c4c4;*/
 }
 .search-hotel form button[type="submit"]{
 

@@ -83,11 +83,11 @@ export class ListComponent implements OnInit {
     }
     if (event == 1) {
       return this.products = this.products.sort((obj1: any, obj2: any) => {
-        if (obj1.quantity > obj2.quantity) {
+        if (obj1.price < obj2.price) {
           return 1;
         }
 
-        if (obj1.quantity < obj2.quantity) {
+        if (obj1.price > obj2.price) {
           return -1;
         }
 

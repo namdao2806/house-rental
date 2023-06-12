@@ -11,14 +11,14 @@
         <div style="margin-top: 60px;margin-left: 55px">
           <h5>Thông tin người dùng</h5>
           <input type="text" placeholder="Họ và tên" formControlName="name" class="form-control"
-                 style="width: 417px;height: 42px;">
+                 style="width: 417px;height: 42px;color: black">
           <div class="error-page" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
             <div style="color: red" *ngIf="name?.errors?.['required']">
               <p>Tên không được để trống</p>
             </div>
           </div>
           <input type="number" placeholder="Số điện thoại" formControlName="phone" class="form-control"
-                 style="width: 417px;height: 42px;">
+                 style="width: 417px;height: 42px;color: black">
           <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
             <div style="color: red" *ngIf="phone?.errors?.['required']">
               <div>Số điện thoại không được bỏ trống</div>
@@ -29,7 +29,7 @@
           </div>
 
           <input type="text" placeholder="Địa chỉ" formControlName="address" class="form-control"
-                 style="width: 417px;height: 42px;  margin-top: 3%">
+                 style="width: 417px;height: 42px;  margin-top: 3%;color: black">
           <div class="error-page" *ngIf="address?.invalid && (address?.dirty || address?.touched)">
             <div style="color: red" *ngIf="address?.errors?.['required']">
               <p>Địa chỉ không được để trống</p>
@@ -37,7 +37,7 @@
           </div>
 
           <input type="email" class="form-control" placeholder="Nhập email" formControlName="email" class="form-control"
-                 style="width: 417px;height: 42px; margin-top: 3%">
+                 style="width: 417px;height: 42px; margin-top: 3%;color: black">
           <div style="display: none;color: red" id="check-email">
             <div>Email đã tồn tại</div>
           </div>

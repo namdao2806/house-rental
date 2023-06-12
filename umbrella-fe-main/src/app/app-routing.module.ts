@@ -28,6 +28,11 @@ import {UserDetailsComponent} from "./component/user/user-details/user-details.c
 import {AdminAllCategoryComponent} from "./component/admin/admin-all-category/admin-all-category.component";
 import {AdminEditCategoryComponent} from "./component/admin/admin-edit-category/admin-edit-category.component";
 import {AdminCreateCategoryComponent} from "./component/admin/admin-create-category/admin-create-category.component";
+import {AdminStatisticCateComponent} from "./component/admin/admin-statistic-cate/admin-statistic-cate.component";
+import {
+  AdminStatisticAddressComponent
+} from "./component/admin/admin-statistic-address/admin-statistic-address.component";
+import {AdminStatisticPriceComponent} from "./component/admin/admin-statistic-price/admin-statistic-price.component";
 
 const routes: Routes = [
   {
@@ -69,6 +74,18 @@ const routes: Routes = [
   {
     path:'admin/admin-create-category',
     component:AdminCreateCategoryComponent
+  },
+  {
+    path:'admin/admin-statistic-cate',
+    component:AdminStatisticCateComponent
+  },
+  {
+    path:'admin/admin-statistic-address',
+    component:AdminStatisticAddressComponent
+  },
+  {
+    path:'admin/admin-statistic-price',
+    component:AdminStatisticPriceComponent
   },
   {
     path:'shop-cart',

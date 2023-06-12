@@ -53,6 +53,9 @@ import { UserDetailsComponent } from './component/user/user-details/user-details
 import { AdminAllCategoryComponent } from './component/admin/admin-all-category/admin-all-category.component';
 import { AdminEditCategoryComponent } from './component/admin/admin-edit-category/admin-edit-category.component';
 import { AdminCreateCategoryComponent } from './component/admin/admin-create-category/admin-create-category.component';
+import { AdminStatisticCateComponent } from './component/admin/admin-statistic-cate/admin-statistic-cate.component';
+import { AdminStatisticAddressComponent } from './component/admin/admin-statistic-address/admin-statistic-address.component';
+import { AdminStatisticPriceComponent } from './component/admin/admin-statistic-price/admin-statistic-price.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +97,10 @@ import { AdminCreateCategoryComponent } from './component/admin/admin-create-cat
     UserDetailsComponent,
     AdminAllCategoryComponent,
     AdminEditCategoryComponent,
-    AdminCreateCategoryComponent
+    AdminCreateCategoryComponent,
+    AdminStatisticCateComponent,
+    AdminStatisticAddressComponent,
+    AdminStatisticPriceComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,13 @@
           <input type='text' formControlName="address" class="form-control" style="width: 500px; height: 35px;margin-left: 20%"><br>
           <label style="margin-left: 20%">Giá (VND):</label>
           <input type='text' formControlName="price" class="form-control" style="width: 500px; height: 35px;margin-left: 20%"><br>
+          <label style="margin-left: 20%">Trạng thái :</label>
+          <select formControlName="quantity" class="form-control" style="width: 500px; height: 35px;margin-left: 20%">
+            <option  value="1">Public
+            </option>
+            <option  value="2">Private
+            </option>
+          </select><br>
           <label style="margin-left: 20%">Loại :</label>
           <select formControlName="categoryId" class="form-control" style="width: 500px; height: 35px;margin-left: 20%">
             <option *ngFor="let category of listCategory" value="{{category.id}}">

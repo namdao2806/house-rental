@@ -16,9 +16,9 @@
           <div class="search-hotel">
 
             <form action="#" [formGroup]="product" (ngSubmit)="searchByAll()" style="margin-left: 25px">
-              <h4 class="agileits-sear-head" style=";margin-bottom: 5px">Tên</h4>
-              <input style="border-radius: 5px;border: 1px solid #fe9126" type="search" placeholder="Nhập tên sản phẩm"
-                     formControlName="name" name="search" required="">
+<!--              <h4 class="agileits-sear-head" style=";margin-bottom: 5px">Tên</h4>-->
+<!--              <input style="border-radius: 5px;border: 1px solid #fe9126" type="search" placeholder="Nhập tên sản phẩm"-->
+<!--                     formControlName="name" name="search" required="">-->
               <h4 class="agileits-sear-head" style="margin-top: 15px;margin-bottom: 5px"> Địa chỉ</h4>
 
               <input style="border-radius: 5px;border: 1px solid #fe9126" type="search"
@@ -88,7 +88,7 @@
 <!--              </div>-->
 <!--            </div>-->
 <!--          </div>-->
-          <div>
+          <div *ngIf="product.quantity==1">
             <div style="margin-top: 30px" class="card">
               <div class="card-body">
                 <div style="
@@ -111,7 +111,7 @@
                               color: #000"
                       >{{product.name}}</h4>
                     </a>
-                    <p style="font-weight: 600; color: red; font-size: 16px">{{ product.price.toLocaleString('vi-VN')}} đ/ tháng</p>
+                    <p style="font-weight: 600; color: red; font-size: 16px">{{ product.price.toLocaleString('vi-VN')}} đ/ tháng {{productByCate.length}}</p>
                     <p> <span><i class="fa-solid fa-location-dot"></i></span> {{product.address}}</p>
                     <p
                       style="

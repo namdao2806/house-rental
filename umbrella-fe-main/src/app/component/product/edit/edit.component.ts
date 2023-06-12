@@ -18,7 +18,7 @@ export class EditComponent implements OnInit {
     name: new FormControl(''),
     description: new FormControl(''),
     price: new FormControl(''),
-    quantity: new FormControl(''),
+    address: new FormControl(''),
     categoryId: new FormControl(''),
     user: new FormControl('')
   })
@@ -52,7 +52,7 @@ export class EditComponent implements OnInit {
         id: new FormControl(data.id),
         name: new FormControl(data.name),
         price: new FormControl(data.price),
-        quantity: new FormControl(data.quantity),
+        address: new FormControl(data.address),
         description: new FormControl(data.description),
         categoryId: new FormControl(data.category),
         user: new FormControl(data.user)
@@ -66,7 +66,7 @@ export class EditComponent implements OnInit {
       category: {
         id: this.editForm.value.categoryId
       },
-      quantity: this.editForm.value.quantity,
+      address: this.editForm.value.address,
       price: this.editForm.value.price,
       description: this.editForm.value.description,
       user: {

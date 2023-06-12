@@ -52,6 +52,16 @@ export class AdminAllProductComponent implements OnInit {
       });
     }
   }
+  acceptProduct(id: any) {
+    if (confirm('Bạn muốn duyệt bài đăng này chứ ???')) {
+      this.productService.delete(id).subscribe(() => {
+        // this.findProductByUserId(id)
+        this.toast.success({detail: "Thành Công", summary: 'Xóa thành công!', duration: 3000})
+      }, e => {
+        console.log(e);
+      });
+    }
+  }
   getAllProducts() {
     this.listImage = []
     if (this.userId == localStorage.getItem("ID")) {

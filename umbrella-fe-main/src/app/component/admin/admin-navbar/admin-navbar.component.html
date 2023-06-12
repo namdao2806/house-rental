@@ -20,6 +20,16 @@
             <a style="font-size: large" [routerLink]="['/admin/list-users']"  class="act" > Người Dùng</a></li>
           <li class="active">
             <a style="font-size: large" [routerLink]="['/admin/admin-all-category']"  class="act" > Danh Mục</a></li>
+          <li class="nav-item dropdown">
+            <a style="font-size: 18px; cursor: pointer;" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Thống kê
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink8">
+              <li><a style="padding: 8px 20px" class="dropdown-item" [routerLink]="['/admin/admin-statistic-address']">Theo Quận</a></li>
+              <li><a style="padding: 8px 20px" class="dropdown-item" [routerLink]="['/admin/admin-statistic-cate']">Theo Danh mục</a></li>
+              <li><a style="padding: 8px 20px" class="dropdown-item" [routerLink]="['/admin/admin-statistic-price']">Theo Giá</a></li>
+            </ul>
+          </li>
 <!--          <li class="active" *ngFor="let category of categories">-->
 <!--            <a style="font-size: large"  [routerLink]="['/products-by-categories',category.id]"  class="act" (click)="searchCategory(category.id)" >{{category.name}}</a></li>-->
         </ul>

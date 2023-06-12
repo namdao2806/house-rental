@@ -38,11 +38,39 @@ export class AllProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProducts()
+    // this.formatMoney()
   }
 
   pageChangeEvent(event: number) {
     this.p = event;
   }
+
+  // formatMoney(): void {
+  //   const input1 = document.getElementById('money-input1') as HTMLInputElement;
+  //   const input2 = document.getElementById('money-input2') as HTMLInputElement;
+  //
+  //   if (input1) {
+  //     const value = input1.value.replace(/\./g, '');
+  //     const parsedValue = BigInt(value);
+  //     if (!isNaN(Number(parsedValue))) {
+  //       const formattedValue = Number(parsedValue).toLocaleString('vi-VN');
+  //       input1.value = formattedValue;
+  //     }
+  //   }
+  //
+  //   if (input2 && input2.value !== "") {
+  //     const value = input2.value.replace(/\./g, '');
+  //     const parsedValue = BigInt(value);
+  //     if (!isNaN(Number(parsedValue))) {
+  //       const formattedValue = Number(parsedValue).toLocaleString('vi-VN');
+  //       input2.value = formattedValue;
+  //     }
+  //   }
+  // }
+
+
+
+
 
   getAllProducts() {
     this.listImage = []
@@ -114,11 +142,11 @@ export class AllProductComponent implements OnInit {
     }
     if (event == 1) {
       return this.listProduct = this.listProduct.sort((obj1: any, obj2: any) => {
-        if (obj1.quantity > obj2.quantity) {
+        if (obj1.price < obj2.price) {
           return 1;
         }
 
-        if (obj1.quantity < obj2.quantity) {
+        if (obj1.price > obj2.price) {
           return -1;
         }
 

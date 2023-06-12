@@ -9,13 +9,13 @@
           <div class="products-right-grid" style="margin-top: 20px; margin-left: 830px">
             <div class="products-right-grids">
               <div class="sorting">
-<!--                <select #sort (change)="sortByAll(sort.value)"-->
-<!--                        style="width: 78% ;height: 34px;border-radius: 5px;border: 1px solid black">-->
+                <select #sort (change)="sortByAll(sort.value)"
+                        style="width: 78% ;height: 34px;border-radius: 5px;border: 1px solid black">
 <!--                  <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Số Lượng</option>-->
-<!--                  <option value="0"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Tên</option>-->
-<!--                  <option value="2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Giá</option>-->
+                  <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Giá Từ Cao Đến Thấp</option>
+                  <option value="2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Giá Từ Thấp Đến Cao</option>
 
-<!--                </select>-->
+                </select>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -24,41 +24,9 @@
           <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab"
                style="border-radius: 13px">
             <div class="agile_top_brands_grids" style="margin-top: 10px;border-radius: 5px">
-              <div class="col-md-6 top_brand_left "
+              <div
                    *ngFor="let product of products|paginate: { itemsPerPage: 12, currentPage: p, totalItems: total }, index as i">
-<!--                <div class="hover14 column" style="border: 1px solid grey;border-radius: 5px">-->
-<!--                  <div class="agile_top_brand_left_grid" style="border-radius: 5px;padding: 0">-->
-<!--                    <figure>-->
-<!--                      <div class="snipcart-item block" style="width: 250px;height:380px">-->
-<!--                        <div class="snipcart-thumb">-->
-<!--                          <img-->
-<!--                            src="{{product.image[0].image}}"-->
-<!--                            class="img-responsive-home"/>-->
-<!--                          <p><a href="#" [routerLink]="['/product-detail',product.id]"-->
-<!--                                class="show-product-home">{{product.name}}</a></p>-->
-<!--                          <h3 style="width: 230px;font-size: 16px; margin-top: 15px; text-align: center;color: #fe9126"> {{ product.price | currency:' VNĐ ':'symbol':'3.0'}}-->
-<!--                          </h3>-->
-<!--                          <p><a href="#" [routerLink]="['/product-detail',product.id]"-->
-<!--                                class="show-product-home">{{product.address}}</a></p>-->
-<!--                        </div>-->
-<!--                        <div class="snipcart-details top_brand_home_details">-->
-<!--                          <br>-->
-<!--&lt;!&ndash;                          <button class="btn button-edit button-shop-list" data-toggle="modal" data-target="#exampleModalAdd"&ndash;&gt;-->
-<!--&lt;!&ndash;                                  style="margin-right: 20px;font-size: 16px;height: 48px; width: 200px" (click)="findByIdProduct(product.id)"><i&ndash;&gt;-->
-<!--&lt;!&ndash;                            class="fa-solid fa-basket-shopping"&ndash;&gt;-->
-<!--&lt;!&ndash;                            style="margin-right: 5px;"></i>Thêm&ndash;&gt;-->
-<!--&lt;!&ndash;                            Vào Giỏ Hàng&ndash;&gt;-->
-<!--&lt;!&ndash;                          </button>&ndash;&gt;-->
-<!--                          <br>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                    </figure>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--                <br>-->
-
-
-                <div>
+                <div class="col-md-6 top_brand_left " *ngIf="product.quantity==1">
                   <div style="margin-top: 30px" class="card">
                     <div style="border: 1px solid #F2F2F2; border-radius: 4px ;padding: 20px" class="card-body">
                       <div style="

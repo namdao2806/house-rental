@@ -1,0 +1,27 @@
+<app-admin-header></app-admin-header>
+<app-admin-navbar></app-admin-navbar>
+<div class="checkout">
+  <div class="container" style="width: 80%">
+    <div style="">
+      <table class="timetable_sub" style="border:2px solid #CDCDCD;border-radius: 10px">
+        <thead>
+        <tr>
+          <th style="font-size: large">Tên danh mục</th>
+          <th>Số lượng bài đăng</th>
+        </tr>
+        </thead>
+        <tr class="rem1"*ngFor="let item of categories,index as i" >
+          <td >
+            <div style="font-size: medium;">{{item.name}}</div>
+          </td>
+          <td>
+            <div class="rem">
+              <div style="font-size: medium;">{{name[i]}}</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

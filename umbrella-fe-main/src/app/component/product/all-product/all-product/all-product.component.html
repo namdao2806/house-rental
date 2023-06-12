@@ -16,9 +16,9 @@
           <div class="search-hotel">
 
             <form action="#" [formGroup]="product" (ngSubmit)="searchByAll()" style="margin-left: 25px">
-              <h4 class="agileits-sear-head" style=";margin-bottom: 5px">Tên</h4>
-              <input style="border-radius: 5px;border: 1px solid #fe9126" type="search" placeholder="Nhập tên "
-                     formControlName="name" name="search" required="">
+<!--              <h4 class="agileits-sear-head" style=";margin-bottom: 5px">Tên</h4>-->
+<!--              <input style="border-radius: 5px;border: 1px solid #fe9126" type="search" placeholder="Nhập tên "-->
+<!--                     formControlName="name" name="search" required="">-->
               <h4 class="agileits-sear-head" style="margin-top: 15px;margin-bottom: 5px"> Địa chỉ</h4>
 
               <input style="border-radius: 5px;border: 1px solid #fe9126" type="search"
@@ -30,9 +30,9 @@
                      placeholder="Nhập mô tả " formControlName="description" name="search"
                      required="">
               <h4 class="agileits-sear-head" style="margin-top: 15px;margin-bottom: 5px">Khoảng Giá</h4>
-              <input style="border-radius: 5px;border: 1px solid #fe9126;margin-bottom: 5px" type="search" formControlName="from"
+              <input id="money-input1"  style="border-radius: 5px;border: 1px solid #fe9126;margin-bottom: 5px" type="search"  formControlName="from"
                      placeholder="Nhập giá từ ..." name="search" required="">
-              <input style="border-radius: 5px;border: 1px solid #fe9126;margin-bottom: 15px" type="search" formControlName="to"
+              <input id="money-input2"  style="border-radius: 5px;border: 1px solid #fe9126;margin-bottom: 15px" type="search" formControlName="to"
                      placeholder="đến khoảng..." name="search" required="" >
 
               <button style="" type="submit" class="button-search">Tìm Kiếm<i class="fa-solid fa-magnifying-glass"
@@ -45,51 +45,23 @@
     <div class="col-md-9 products-right" style="margin-bottom: 100px; border:1px solid #fe9126;border-radius: 5px">
       <div class="products-right-grid" style="margin-top: 20px; margin-left: 320px">
         <div class="products-right-grids">
-<!--          <div class="sorting">-->
-<!--            <select #sort (change)="sortByAll(sort.value)"-->
+          <div class="sorting">
+            <select #sort (change)="sortByAll(sort.value)"
 
-<!--                    style="width: 78% ;height: 34px;border-radius: 5px;border: 1px solid black">-->
-<!--              <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Số Lượng</option>-->
-<!--              <option value="0"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Tên</option>-->
-<!--              <option value="2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Giá</option>-->
+                    style="width: 78% ;height: 34px;border-radius: 5px;border: 1px solid black">
+              <option value="1"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Giá Từ Cao Đến Thấp</option>
+              <option value="2"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sắp Xếp Theo Giá Từ Thấp Đến Cao</option>
 
-<!--            </select>-->
-<!--          </div>-->
+            </select>
+          </div>
           <div class="clearfix"></div>
         </div>
       </div>
       <div class="agile_top_brands_grids">
         <div class="col-md-12 top_brand_left"
              *ngFor="let product of listProduct|paginate: { itemsPerPage: 8, currentPage: p, totalItems: total }, index as i">
-<!--          <div class="hover14 column" style="width: 240px;height: 380px;border: 1px solid grey;border-radius: 5px">-->
-<!--            <div>-->
-<!--              <div class="agile_top_brand_left_grid"-->
-<!--                   style="border-top-left-radius: 5px;border-top-right-radius: 5px;padding: 0">-->
-<!--                <figure>-->
-<!--                  <div class="snipcart-item block">-->
-<!--                    <div class="snipcart-thumb">-->
-<!--                      <a [routerLink]="['/product-detail',product.id]"><img-->
-<!--                        src="{{product.image[0].image}}"-->
-<!--                        class="img-responsive"/></a>-->
-<!--                      <p><a href="#" [routerLink]="['/product-detail',product.id]"-->
-<!--                            class="show-product" style="margin-left: 8px">{{product.name}}</a></p>-->
-<!--                      <h4 style="font-size: 22px; margin-top: 5px; text-align: center;color: #fe9126">{{ product.price | currency:' VNĐ ':'symbol':'3.0'}}-->
-<!--                      </h4>-->
-<!--                      <p><a href="#" [routerLink]="['/product-detail',product.id]"-->
-<!--                            class="show-product" style="margin-left: 8px">{{product.address}}</a></p>-->
-<!--                    </div>-->
-<!--                    <div class="snipcart-details top_brand_home_details" *ngIf="userId != product.user.id">-->
-<!--&lt;!&ndash;                      <button class="btn button-shop-list-all" style="font-size: 16px;margin-right: 20px;" data-toggle="modal" data-target="#exampleModalAdd" (click)="findByIdProduct(product.id)">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <i class="fa-solid fa-basket-shopping" style="margin-right: 5px">&ndash;&gt;-->
-<!--&lt;!&ndash;                        </i>Thêm Vào Giỏ Hàng&ndash;&gt;-->
-<!--&lt;!&ndash;                      </button>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </figure>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-          <div>
+
+          <div *ngIf="product.quantity==1">
             <div style="margin-top: 30px" class="card">
               <div class="card-body">
                 <div style="
@@ -112,7 +84,7 @@
                               color: #000"
                       >{{product.name}}</h4>
                     </a>
-                    <p style="font-weight: 600; color: red; font-size: 16px">{{ product.price.toLocaleString('vi-VN')}} đ/ tháng</p>
+                    <p style="font-weight: 600; color: red; font-size: 16px">{{ product.price.toLocaleString('vi-VN')}} đ/ tháng </p>
                     <p> <span><i class="fa-solid fa-location-dot"></i></span> {{product.address}}</p>
                     <p
                       style="

@@ -17,6 +17,7 @@ export class AdminEditProductComponent implements OnInit {
     name: new FormControl(''),
     description: new FormControl(''),
     price: new FormControl(''),
+    quantity: new FormControl(''),
     address: new FormControl(''),
     categoryId: new FormControl(''),
     user:new FormControl('')
@@ -50,6 +51,7 @@ export class AdminEditProductComponent implements OnInit {
         id: new FormControl(data.id),
         name: new FormControl(data.name),
         price: new FormControl(data.price),
+        quantity: new FormControl(data.quantity),
         address: new FormControl(data.address),
         description: new FormControl(data.description),
         categoryId: new FormControl(data.category),
@@ -66,6 +68,7 @@ export class AdminEditProductComponent implements OnInit {
       },
       address: this.editProductMyShopForm.value.address,
       price: this.editProductMyShopForm.value.price,
+      quantity: this.editProductMyShopForm.value.quantity,
       description: this.editProductMyShopForm.value.description,
       user: {
         id: this.editProductMyShopForm.value.user.id
@@ -73,7 +76,7 @@ export class AdminEditProductComponent implements OnInit {
     }
     console.log(this.obj)
     this.productService.updateProduct(this.editProductMyShopForm.value.id, this.obj).subscribe(() => {
-      this.toast.success({detail: "Thành Công", summary: 'Sửa thành công!', duration: 3000})
+      this.toast.success({detail: "Thành Công", summary: 'Accept thành công!', duration: 3000})
       // @ts-ignore
       $('#exampleModalEditProductMyShop').modal('hide');
       this.editProductMyShopForm.reset()

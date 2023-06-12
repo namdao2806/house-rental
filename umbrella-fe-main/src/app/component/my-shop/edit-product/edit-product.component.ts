@@ -18,6 +18,7 @@ export class EditProductComponent implements OnInit {
     name: new FormControl(''),
     description: new FormControl(''),
     price: new FormControl(''),
+    quantity: new FormControl(''),
     address: new FormControl(''),
     categoryId: new FormControl(''),
     user:new FormControl('')
@@ -52,6 +53,7 @@ export class EditProductComponent implements OnInit {
         name: new FormControl(data.name),
         price: new FormControl(data.price),
         address: new FormControl(data.address),
+        quantity: new FormControl(data.quantity),
         description: new FormControl(data.description),
         categoryId: new FormControl(data.category),
         user:new FormControl(data.user)
@@ -66,6 +68,7 @@ export class EditProductComponent implements OnInit {
         id: this.editProductMyShopForm.value.categoryId
       },
       address: this.editProductMyShopForm.value.address,
+      quantity: this.editProductMyShopForm.value.quantity,
       price: this.editProductMyShopForm.value.price,
       description: this.editProductMyShopForm.value.description,
       user: {
@@ -74,7 +77,7 @@ export class EditProductComponent implements OnInit {
     }
     console.log(this.obj)
     this.productService.updateProduct(this.editProductMyShopForm.value.id, this.obj).subscribe(() => {
-      this.toast.success({detail: "Thành Công", summary: 'Sửa thành công!', duration: 3000})
+      this.toast.success({detail: "Thành Công", summary: 'Cập nhật thành công!', duration: 3000})
       // @ts-ignore
       $('#exampleModalEditProductMyShop').modal('hide');
       this.editProductMyShopForm.reset()

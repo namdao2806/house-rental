@@ -46,7 +46,7 @@ export class ListProductComponent implements OnInit {
   }
 
   deleteProduct(id: any) {
-    if (confirm('Bạn chắc chắn muốn xóa sản phẩm này chứ ???')) {
+    if (confirm('Bạn chắc chắn muốn xóa bài đăng này chứ ???')) {
       this.productService.delete(id).subscribe(() => {
         this.findProductByUserId(id)
         this.toast.success({detail: "Thành Công", summary: 'Xóa thành công!', duration: 3000})

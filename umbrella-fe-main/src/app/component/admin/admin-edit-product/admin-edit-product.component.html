@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center">Sửa </h3>
+        <h3 class="modal-title" id="exampleModalLabel" style="text-align: center">Accept </h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 20px">
           <span aria-hidden="true">X</span>
         </button>
@@ -19,6 +19,16 @@
           <input type='text' formControlName="address" class="form-control" style="width: 500px; height: 35px;margin-left: 20%"><br>
           <label style="margin-left: 20%">Giá (VND):</label>
           <input type='text' formControlName="price" class="form-control" style="width: 500px; height: 35px;margin-left: 20%"><br>
+          <label style="margin-left: 20%">Accept :</label>
+          <select formControlName="quantity" class="form-control" style="width: 500px; height: 35px;margin-left: 20%">
+            <option value="0">
+              No Accept
+            </option>
+            <option value="1">
+              Accept
+            </option>
+          </select>
+          <br>
           <label style="margin-left: 20%">Loại :</label>
           <select formControlName="categoryId" class="form-control" style="width: 500px; height: 35px;margin-left: 20%">
             <option *ngFor="let category of listCategory" value="{{category.id}}">
@@ -28,7 +38,7 @@
           <br>
           <div class="modal-footer" >
             <button type="submit" style="margin-right: 375px"  class="btn button-edit"><i class="fa-solid fa-pen-to-square"
-                                                                                          style="margin-right: 5px"></i>Sửa</button>
+                                                                                          style="margin-right: 5px"></i>Accept</button>
           </div>
         </form>
       </div>
